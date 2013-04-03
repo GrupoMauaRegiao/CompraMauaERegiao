@@ -1,10 +1,218 @@
 @import "normalize.scss";
+$fonte: 'Lato',Tahoma,sans-serif;
+
+  .slide{
+    font-family:$fonte;
+    color:rgb(255,255,255);
+    margin:0 auto;
+    width:50%;
+    padding:11%;
+    -webkit-transition:all 0.5s linear;
+    -moz-transition:all 0.5s linear;
+    -o-transition:all 0.5s linear;
+    transition:all 0.5s linear;
+
+    .header{
+      margin:0 0 15% 0;
+
+      h1{
+        margin:0;
+        padding:0;
+      }
+    }
+
+    .texto{
+      p{
+        margin:0;
+        padding:0;
+      }
+    }
+  }
+
+
+  @-webkit-keyframes animacao{
+    0% {
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -o-transform: translateY(0);
+      transform: translateY(0);
+    }
+    50% {
+      -webkit-transform: translateY(-50px);
+      -moz-transform: translateY(-50px);
+      -o-transform: translateY(-50px);
+      transform: translateY(-50px);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -o-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+
+  @-moz-keyframes animacao{
+    0% {
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -o-transform: translateY(0);
+      transform: translateY(0);
+    }
+    50% {
+      -webkit-transform: translateY(-50px);
+      -moz-transform: translateY(-50px);
+      -o-transform: translateY(-50px);
+      transform: translateY(-50px);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -o-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+
+  @-o-keyframes animacao{
+    0% {
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -o-transform: translateY(0);
+      transform: translateY(0);
+    }
+    50% {
+      -webkit-transform: translateY(-50px);
+      -moz-transform: translateY(-50px);
+      -o-transform: translateY(-50px);
+      transform: translateY(-50px);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -o-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes animacao{
+    0% {
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -o-transform: translateY(0);
+      transform: translateY(0);
+    }
+    50% {
+      -webkit-transform: translateY(-50px);
+      -moz-transform: translateY(-50px);
+      -o-transform: translateY(-50px);
+      transform: translateY(-50px);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -o-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+
+.animacao-controle-scroll{
+  animation:animacao 3s infinite linear;
+  -moz-animation:animacao 3s infinite linear;
+  -webkit-animation:animacao 3s infinite linear;
+  -o-animation:animacao 3s infinite linear;
+}
+
+  .botao-controle{
+    width:85px;
+    height:40px;
+    position:fixed;
+    float:right;
+
+    img{
+      width:85px;
+      height:40px;
+    }
+  }
+
+@media screen and (min-width:1500px) {
+  .slide{
+    .header{
+      h1{
+        font-size:5em;
+      }
+    }
+
+    .texto{
+      p{
+        font-size:4.5em;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:1500px) {
+  .slide{
+    .header{
+      h1{
+        font-size:4em;
+      }
+    }
+
+    .texto{
+      p{
+        font-size:3.5em;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:1000px) {
+  .slide{
+    .header{
+      h1{
+        font-size:3em;
+      }
+    }
+
+    .texto{
+      p{
+        font-size:2em;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:500px) {
+  .slide{
+    .header{
+      h1{
+        font-size:2em;
+      }
+    }
+
+    .texto{
+      p{
+        font-size:1em;
+      }
+    }
+  }
+
+  .botao-controle{
+    width:42px;
+    height:20px;
+
+    img{
+      width:42px;
+      height:20px;
+    }
+  }
+}
 
 #pagina{
   position:relative;
   top:0;
   overflow:auto;
-  background:rgb(28,83,137) url('../imagens/background-body.jpg') no-repeat;
+  background:rgb(28,83,137) url('../imagens/background-body.jpg') no-repeat fixed;
   width:100%;
   height:100%;
 }
+
