@@ -62,14 +62,14 @@ $(document).ready(function () {
   }
 
   function controlarScroll() {
-    var botao, fator, nPaginas, alturaDocumento, alturaPagina;
+    var botao, fator, nPaginas, documento, alturaPagina;
     botao = $('.botao-controle');
     fator = 0;
     nPaginas = 6;
+    documento = $(document);
 
-    botao.on('click', function () {
-      alturaDocumento = $(document).height();
-      alturaPagina = alturaDocumento / nPaginas;
+    function animar() {
+      alturaPagina = documento.height() / nPaginas;
       $('html, body').animate({
         scrollTop: alturaPagina * (fator < 5 ? fator += 1 : fator = 0)
       }, 2000);
@@ -77,22 +77,42 @@ $(document).ready(function () {
       if (fator === 5) {
         botao.fadeOut(2000);
       }
+    }
 
+    botao.on('click', function () {
+      animar();
+    });
+
+    documento.on('keyup', function (evt) {
+      evt.preventDefault();
+      evt.stopImmediatePropagation();
+      evt.stopPropagation();
+
+      if (evt.keyCode === 40) {
+        animar();
+      }
+      
+      if (fator === 5) {
+        $(this).off();
+      }
     });
   }
 
-  function animacaoTextoFadeInOut() {
-    var texto, pagina;
-    texto = $('.texto');
-    pagina = $('#pagina');
-    
-    texto.fadeOut(1);
-    pagina.on('mouseover', function () {
-      texto.fadeIn(1000);
-    });
+  function esconderPagina() {
+    $('#pagina').fadeOut(1);
   }
 
-  animacaoTextoFadeInOut();
+  function exibirPagina() {
+    $('#pagina').fadeIn(1000);
+  }
+
+
+  esconderPagina();
+
+  setTimeout(function () {
+    exibirPagina();
+  }, 1000);
+
   ajustarSlide();
   posicionarSetaControleScroll();
   controlarAnimacaoSetaScroll();

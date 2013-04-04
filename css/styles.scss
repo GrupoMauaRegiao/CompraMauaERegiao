@@ -6,8 +6,8 @@ $fonte: 'Lato',Tahoma,sans-serif;
   height:$height;
 }
 
-body{
-  background:rgb(28,83,137);
+html{
+  background:rgb(0,0,0);
 }
 
 *::selection{
@@ -15,6 +15,7 @@ body{
 }
 
 #pagina{
+  display:none;
   position:relative;
   top:0;
   overflow:auto;
@@ -77,6 +78,70 @@ body{
       text-align:right;
     }
   }
+
+  .formulario{
+    form{
+      input{
+        -webkit-transition:all 0.2s linear;
+        -moz-transition:all 0.2s linear;
+        -o-transition:all 0.2s linear;
+        transition:all 0.2s linear;
+      }
+
+      input[type="text"],
+      input[type="email"]{
+        padding:5px;
+        text-transform:uppercase;
+        border:0;
+        outline:0;
+      }
+
+      input[type="text"]::-webkit-input-placeholder,
+      input[type="email"]::-webkit-input-placeholder{
+        color:rgb(230,230,230);
+        text-transform:uppercase;
+      }
+
+      input[type="text"]::-moz-input-placeholder,
+      input[type="email"]::-moz-input-placeholder{
+        color:rgb(230,230,230);
+        text-transform:uppercase;
+      }
+
+      input[type="text"]::-o-input-placeholder,
+      input[type="email"]::-o-input-placeholder{
+        color:rgb(230,230,230);
+        text-transform:uppercase;
+      }
+
+      input[type="text"]::input-placeholder,
+      input[type="email"]::input-placeholder{
+        color:rgb(230,230,230);
+        text-transform:uppercase;
+      }
+
+      input:focus{
+        color:rgb(0,0,0);
+        -webkit-box-shadow:inset -2px 2px 12px rgb(100,100,100);
+        -moz-box-shadow:inset -2px 2px 12px rgb(100,100,100);
+        -o-box-shadow:inset -2px 2px 12px rgb(100,100,100);
+        box-shadow:inset -2px 2px 12px rgb(100,100,100);
+      }
+
+      input[type="button"]{
+        border:0;
+        font-weight:900;
+        vertical-align:top;
+        color:rgb(255,255,255);
+        background:rgb(99,129,176);
+      }
+
+      input[type="button"]:hover{
+        color:rgb(255,255,255);
+        background:rgb(49,79,126);
+      }
+    }
+  } // #Formulário
 }
 
   @-webkit-keyframes animacao{
@@ -261,6 +326,10 @@ body{
   -o-animation:animacaoSmartphone 0.2s infinite linear;
 }
 
+.menor{
+  margin: 0 0 20px 0;
+}
+
   .botao-controle{
     @include WidthHeight(85px, 40px);
     position:fixed;
@@ -272,21 +341,11 @@ body{
   }
 
 @media screen and (min-width:1500px) {
-  .menor{
-    margin: 0 0 20px 0;
-    font-size:8px;
-  }
-
   .slide{
     .header{ h1{ font-size:5em; }}
-
-    .header-maior{
-      h1{
-        font-size:120px;
-      }
-    }
-
+    .header-maior{ h1{ font-size:120px; }}
     .texto{ p{ font-size:4.5em; }}
+    .menor{ font-size:9px !important; }
 
     .logotipo{
       margin:40px  0 0 0;
@@ -320,61 +379,30 @@ body{
 
     .formulario{
       form{
-        input{
-          -webkit-transition:all 0.5s linear;
-          -moz-transition:all 0.5s linear;
-          -o-transition:all 0.5s linear;
-          transition:all 0.5s linear;
-        }
-
         input[type="text"],
         input[type="email"]{
-          padding:5px;
-          text-transform:uppercase;
           font-size:35px;
-          height:60px;
-          width:385px;
-          border:0;
-          outline:0;
+          @include WidthHeight(385px, 60px);
           margin:0 0 20px 0;
-        }
-
-        input[type="text"]::-webkit-input-placeholder,
-        input[type="email"]::-webkit-input-placeholder{
-          color:rgb(230,230,230);
-        }
-
-        input:focus{
-          color:rgb(0,0,0);
-          box-shadow:inset -2px 2px 12px rgb(100,100,100);
         }
 
         input[type="button"]{
           font-size:30px;
           background:rgb(99,129,176);
-          border:0;
           margin:0 0 0 20px;
-          vertical-align:top;
-          width:80px;
-          height:70px;
-          color:rgb(255,255,255);
-          font-weight:900;
-        }
-
-        input[type="button"]:hover{
-          color:rgb(255,255,255);
-          background:rgb(49,79,126);
+          @include WidthHeight(80px, 70px);
         }
       }
     } // #Formulário
-
   } // #Slide
 }
 
 @media screen and (max-width:1500px) {
   .slide{
     .header{ h1{ font-size:4em; }}
+    .header-maior{ h1{ font-size:100px; }}
     .texto{ p{ font-size:3.5em; }}
+    .menor{ font-size:12px !important; }
 
     .logotipo{
       margin:30px  0 0 0;
@@ -405,13 +433,33 @@ body{
         }
       }
     } // #Smartphone
+
+    .formulario{
+      form{
+        input[type="text"],
+        input[type="email"]{
+          font-size:35px;
+          @include WidthHeight(385px, 60px);
+          margin:0 0 20px 0;
+        }
+
+        input[type="button"]{
+          font-size:30px;
+          background:rgb(99,129,176);
+          margin:0 0 0 20px;
+          @include WidthHeight(80px, 70px);
+        }
+      }
+    } // #Formulário
   } // #Slide
 }
 
 @media screen and (max-width:1000px) {
   .slide{
     .header{ h1{ font-size:3em; }}
+    .header-maior{ h1{ font-size:70px; }}
     .texto{ p{ font-size:2em; }}
+    .menor{ font-size:13px !important; }
 
     .logotipo{
       margin:20px  0 0 0;
@@ -443,16 +491,39 @@ body{
         }
       }
     } // #Smartphone
-  }
+
+    .formulario{
+      form{
+        input[type="text"],
+        input[type="email"]{
+          font-size:25px;
+          margin:0 0 20px 0;
+          @include WidthHeight(210px, 40px);
+        }
+
+        input[type="button"]{
+          font-size:20px;
+          background:rgb(99,129,176);
+          margin:0 0 0 10px;
+          @include WidthHeight(55px, 50px);
+        }
+      }
+    } // #Formulário
+  } // #Slide
 }
 
 @media screen and (max-width:500px) {
   .slide{
     .header{ h1{ font-size:2em; }}
+    .header-maior{ h1{ font-size:40px; }}
     .texto{ p{ font-size:1em; }}
+    .menor{
+      font-size:15px !important;
+      margin:0 0 5px 0;
+    }
 
     .logotipo{
-      margin:10px  0 0 0;
+      margin:10px 0 0 0;
 
       img{ @include WidthHeight(200px, auto); }
     }
@@ -481,7 +552,24 @@ body{
       }
     } // #Smartphone
 
-  }
+    .formulario{
+      form{
+        input[type="text"],
+        input[type="email"]{
+          font-size:18px;
+          margin:0 0 5px 0;
+          @include WidthHeight(120px, 30px);
+        }
+
+        input[type="button"]{
+          font-size:18px;
+          background:rgb(99,129,176);
+          margin:0 0 0 5px !important;
+          @include WidthHeight(45px, 40px);
+        }
+      }
+    } // #Formulário
+  } // #Slide
 
   .botao-controle{
     @include WidthHeight(42px, 20px);
