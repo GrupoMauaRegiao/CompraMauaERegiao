@@ -62,11 +62,10 @@ $(document).ready(function () {
   }
 
   function controlarScroll() {
-    var botao, fator, nPaginas, janela, alturaDocumento, alturaPagina;
+    var botao, fator, nPaginas, alturaDocumento, alturaPagina;
     botao = $('.botao-controle');
     fator = 0;
     nPaginas = 6;
-    janela = $(window);
 
     botao.on('click', function () {
       alturaDocumento = $(document).height();
