@@ -72,7 +72,7 @@ $(document).ready(function () {
       alturaPagina = alturaDocumento / nPaginas;
       $('html, body').animate({
         scrollTop: alturaPagina * (fator < 5 ? fator += 1 : fator = 0)
-      }, 1000);
+      }, 2000);
     });
   }
 
