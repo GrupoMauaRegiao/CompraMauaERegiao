@@ -37,7 +37,7 @@ $(document).ready(function() {
     });
   }
 
-  function controlarAnimacaoScroll() {
+  function controlarAnimacaoSetaScroll() {
     var controleScroll;
     controleScroll = $('.botao-controle');
 
@@ -60,8 +60,25 @@ $(document).ready(function() {
     });
   }
 
+  function controlarScroll() {
+    var botao, fator, nPaginas, alturaDocumento, alturaPagina;
+    botao = $('.botao-controle');
+    fator = 0;
+    nPaginas = 6;
+
+    botao.on('click', function () {
+    alturaDocumento = $(document).height();
+    alturaPagina = alturaDocumento / nPaginas;
+      $('html, body').animate({
+        scrollTop: alturaPagina * (fator < 5 ? fator += 1 : fator = 0)
+      }, 1000);
+    console.log('Yeahh', fator);
+    });
+  }
+
   ajustarSlide();
   posicionarSetaControleScroll();
-  controlarAnimacaoScroll();
+  controlarAnimacaoSetaScroll();
+  controlarScroll();
 
 });
