@@ -72,7 +72,6 @@ $(document).ready(function() {
       $('html, body').animate({
         scrollTop: alturaPagina * (fator < 5 ? fator += 1 : fator = 0)
       }, 1000);
-    console.log('Yeahh', fator);
     });
   }
 
