@@ -6,6 +6,14 @@ $fonte: 'Lato',Tahoma,sans-serif;
   height:$height;
 }
 
+body{
+  background:rgb(28,83,137);
+}
+
+*::selection{
+  background:rgb(252,252,15);
+}
+
 #pagina{
   position:relative;
   top:0;
@@ -25,11 +33,25 @@ $fonte: 'Lato',Tahoma,sans-serif;
     transition:all 0.5s linear;
 
     .header{
-      margin:0 0 15% 0;
+      margin:0 0 5% 0;
 
       h1{
+        font-weight:300;
         margin:0;
         padding:0;
+      }
+    }
+
+    .header-maior{
+      h1{
+        font-weight:300;
+      }
+    }
+
+    .smartphone{
+      .texto{
+        float:left;
+        color:rgb(252,252,15);
       }
     }
 
@@ -38,6 +60,21 @@ $fonte: 'Lato',Tahoma,sans-serif;
         margin:0;
         padding:0;
       }
+    }
+
+    .logotipo{
+      text-align:center;
+
+      img{
+        -webkit-transition:all 0.2s linear;
+        -moz-transition:all 0.2s linear;
+        -o-transition:all 0.2s linear;
+        transition:all 0.2s linear;
+      }
+    }
+
+    .logotipo-portal{
+      text-align:right;
     }
   }
 }
@@ -126,11 +163,102 @@ $fonte: 'Lato',Tahoma,sans-serif;
     }
   }
 
+  @-webkit-keyframes animacaoSmartphone{
+    0% {
+      -webkit-transform: rotate(-20deg);
+      -moz-transform: rotate(-20deg);
+      -o-transform: rotate(-20deg);
+      transform: rotate(-20deg);
+    }
+    50% {
+      -webkit-transform: rotate(0);
+      -moz-transform: rotate(0);
+      -o-transform: rotate(0);
+      transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(-20deg);
+      -moz-transform: rotate(-20deg);
+      -o-transform: rotate(-20deg);
+      transform: rotate(-20deg);
+    }
+  }
+
+  @-moz-keyframes animacaoSmartphone{
+    0% {
+      -webkit-transform: rotate(-20deg);
+      -moz-transform: rotate(-20deg);
+      -o-transform: rotate(-20deg);
+      transform: rotate(-20deg);
+    }
+    50% {
+      -webkit-transform: rotate(0);
+      -moz-transform: rotate(0);
+      -o-transform: rotate(0);
+      transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(-20deg);
+      -moz-transform: rotate(-20deg);
+      -o-transform: rotate(-20deg);
+      transform: rotate(-20deg);
+    }
+  }
+
+  @-o-keyframes animacaoSmartphone{
+    0% {
+      -webkit-transform: rotate(-20deg);
+      -moz-transform: rotate(-20deg);
+      -o-transform: rotate(-20deg);
+      transform: rotate(-20deg);
+    }
+    50% {
+      -webkit-transform: rotate(0);
+      -moz-transform: rotate(0);
+      -o-transform: rotate(0);
+      transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(-20deg);
+      -moz-transform: rotate(-20deg);
+      -o-transform: rotate(-20deg);
+      transform: rotate(-20deg);
+    }
+  }
+
+  @keyframes animacaoSmartphone{
+    0% {
+      -webkit-transform: rotate(-20deg);
+      -moz-transform: rotate(-20deg);
+      -o-transform: rotate(-20deg);
+      transform: rotate(-20deg);
+    }
+    50% {
+      -webkit-transform: rotate(0);
+      -moz-transform: rotate(0);
+      -o-transform: rotate(0);
+      transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(-20deg);
+      -moz-transform: rotate(-20deg);
+      -o-transform: rotate(-20deg);
+      transform: rotate(-20deg);
+    }
+  }
+
 .animacao-controle-scroll{
   animation:animacao 3s infinite linear;
   -moz-animation:animacao 3s infinite linear;
   -webkit-animation:animacao 3s infinite linear;
   -o-animation:animacao 3s infinite linear;
+}
+
+.animacaoSmartphone{
+  animation:animacaoSmartphone 0.2s infinite linear;
+  -moz-animation:animacaoSmartphone 0.2s infinite linear;
+  -webkit-animation:animacaoSmartphone 0.2s infinite linear;
+  -o-animation:animacaoSmartphone 0.2s infinite linear;
 }
 
   .botao-controle{
@@ -144,23 +272,177 @@ $fonte: 'Lato',Tahoma,sans-serif;
   }
 
 @media screen and (min-width:1500px) {
+  .menor{
+    margin: 0 0 20px 0;
+    font-size:8px;
+  }
+
   .slide{
     .header{ h1{ font-size:5em; }}
+
+    .header-maior{
+      h1{
+        font-size:120px;
+      }
+    }
+
     .texto{ p{ font-size:4.5em; }}
-  }
+
+    .logotipo{
+      margin:40px  0 0 0;
+
+      img{ @include WidthHeight(788px, 290px); }
+    }
+
+    .logotipo-portal{
+      margin:70px 0 0 0;
+
+      img{
+        @include WidthHeight(265px, 272px);
+      }
+    }
+
+    .smartphone{
+      margin:75px 30px 0 0;
+
+      .texto{
+        float:left;
+        padding: 0 20% 0 0;
+        color:rgb(252,252,15);
+      }
+
+      .imagem{
+        img{
+          @include WidthHeight(93px, 165px);
+        }
+      }
+    } // #Smartphone
+
+    .formulario{
+      form{
+        input{
+          -webkit-transition:all 0.5s linear;
+          -moz-transition:all 0.5s linear;
+          -o-transition:all 0.5s linear;
+          transition:all 0.5s linear;
+        }
+
+        input[type="text"],
+        input[type="email"]{
+          padding:5px;
+          text-transform:uppercase;
+          font-size:35px;
+          height:60px;
+          width:385px;
+          border:0;
+          outline:0;
+          margin:0 0 20px 0;
+        }
+
+        input[type="text"]::-webkit-input-placeholder,
+        input[type="email"]::-webkit-input-placeholder{
+          color:rgb(230,230,230);
+        }
+
+        input:focus{
+          color:rgb(0,0,0);
+          box-shadow:inset -2px 2px 12px rgb(100,100,100);
+        }
+
+        input[type="button"]{
+          font-size:30px;
+          background:rgb(99,129,176);
+          border:0;
+          margin:0 0 0 20px;
+          vertical-align:top;
+          width:80px;
+          height:70px;
+          color:rgb(255,255,255);
+          font-weight:900;
+        }
+
+        input[type="button"]:hover{
+          color:rgb(255,255,255);
+          background:rgb(49,79,126);
+        }
+      }
+    } // #Formulário
+
+  } // #Slide
 }
 
 @media screen and (max-width:1500px) {
   .slide{
     .header{ h1{ font-size:4em; }}
     .texto{ p{ font-size:3.5em; }}
-  }
+
+    .logotipo{
+      margin:30px  0 0 0;
+
+      img{ @include WidthHeight(600px, auto); }
+    }
+
+    .logotipo-portal{
+      margin:50px 0 0 0;
+
+      img{
+        @include WidthHeight(230px, auto);
+      }
+    }
+
+    .smartphone{
+      margin:75px 30px 0 0;
+
+      .texto{
+        float:left;
+        padding: 0 9% 0 0;
+        color:rgb(252,252,15);
+      }
+
+      .imagem{
+        img{
+          @include WidthHeight(40px, auto);
+        }
+      }
+    } // #Smartphone
+  } // #Slide
 }
 
 @media screen and (max-width:1000px) {
   .slide{
     .header{ h1{ font-size:3em; }}
     .texto{ p{ font-size:2em; }}
+
+    .logotipo{
+      margin:20px  0 0 0;
+
+      img{ @include WidthHeight(200px, auto); }
+    }
+
+    .logotipo-portal{
+      margin:40px 0 0 0;
+
+      img{
+        @include WidthHeight(170px, auto);
+      }
+    }
+
+
+    .smartphone{
+      margin:75px 30px 0 0;
+
+      .texto{
+        float:left;
+        padding: 0 0 0 0;
+        color:rgb(252,252,15);
+      }
+
+      .imagem{
+        img{
+          @include WidthHeight(30px, auto);
+        }
+      }
+    } // #Smartphone
   }
 }
 
@@ -168,6 +450,37 @@ $fonte: 'Lato',Tahoma,sans-serif;
   .slide{
     .header{ h1{ font-size:2em; }}
     .texto{ p{ font-size:1em; }}
+
+    .logotipo{
+      margin:10px  0 0 0;
+
+      img{ @include WidthHeight(200px, auto); }
+    }
+
+    .logotipo-portal{
+      margin:20px 0 0 0;
+
+      img{
+        @include WidthHeight(100px, auto);
+      }
+    }
+
+    .smartphone{
+      margin:20px 30px 0 0;
+
+      .texto{
+        float:left;
+        padding: 0 10% 0 0;
+        color:rgb(252,252,15);
+      }
+
+      .imagem{
+        img{
+          @include WidthHeight(20px, auto);
+        }
+      }
+    } // #Smartphone
+
   }
 
   .botao-controle{

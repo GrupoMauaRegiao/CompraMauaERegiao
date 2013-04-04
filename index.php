@@ -29,7 +29,7 @@
             <p>Você já navegou em um site em que você não precisa mudar de página?</p>
           </div>
           <div class="logotipo">
-            <img src="#" alt="" />
+            <img src="imagens/logotipo-compra-maua-e-regiao.png" alt="" />
           </div>
         </div>
       </div> <!-- #Slide -->
@@ -48,11 +48,13 @@
             <p>Um site fácil de mexer no PC e ótimo para navegar em smartphone e tablets.</p>
           </div>
           <div class="destaque">
-            <div class="texto">
-              <p>Isso é possível?</p>
-            </div>
             <div class="smartphone">
-              <img src="#" alt="" />
+              <div class="texto">
+                <p>Isso é possível?</p>
+              </div>
+              <div class="imagem">
+                <img src="imagens/telefone.png" alt="" />
+              </div>
             </div>
           </div>
         </div>
@@ -67,7 +69,7 @@
             <p>Nós vamos inovar de novo!</p>
           </div>
           <div class="logotipo-portal">
-            <img src="#" alt="" />
+            <img src="imagens/logotipo-grupo-maua-e-regiao.png" alt="" />
           </div>
         </div>
       </div> <!-- #Slide -->
@@ -77,13 +79,13 @@
           <div class="header-maior">
             <h1>Aguarde!</h1>
           </div>
-          <div class="texto">
+          <div class="texto menor">
             <p>Seja o primeiro a saber:</p>
           </div>
           <div class="formulario">
             <form>
-              <input type="text" value="Nome" name="nome" /> <br />
-              <input type="text" value="E-mail" name="email" />
+              <input type="text" placeholder="Nome" name="nome" required /> <br />
+              <input type="email" placeholder="E-mail" name="email" required />
               <input type="button" value="OK" name="botao-ok" />
             </form>
           </div>

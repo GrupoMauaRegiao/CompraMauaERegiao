@@ -62,10 +62,11 @@ $(document).ready(function () {
   }
 
   function controlarScroll() {
-    var botao, fator, nPaginas, alturaDocumento, alturaPagina;
+    var botao, fator, nPaginas, janela, alturaDocumento, alturaPagina;
     botao = $('.botao-controle');
     fator = 0;
     nPaginas = 6;
+    janela = $(window);
 
     botao.on('click', function () {
       alturaDocumento = $(document).height();
@@ -73,9 +74,26 @@ $(document).ready(function () {
       $('html, body').animate({
         scrollTop: alturaPagina * (fator < 5 ? fator += 1 : fator = 0)
       }, 2000);
+
+      if (fator === 5) {
+        botao.fadeOut(2000);
+      }
+
     });
   }
 
+  function animacaoTextoFadeInOut() {
+    var texto, pagina;
+    texto = $('.texto');
+    pagina = $('#pagina');
+    
+    texto.fadeOut(1);
+    pagina.on('mouseover', function () {
+      texto.fadeIn(1000);
+    });
+  }
+
+  animacaoTextoFadeInOut();
   ajustarSlide();
   posicionarSetaControleScroll();
   controlarAnimacaoSetaScroll();
