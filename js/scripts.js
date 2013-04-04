@@ -1,4 +1,5 @@
-$(document).ready(function() {
+"use strict";
+$(document).ready(function () {
   function getWidth() {
     return $(window).width();
   }
@@ -67,8 +68,8 @@ $(document).ready(function() {
     nPaginas = 6;
 
     botao.on('click', function () {
-    alturaDocumento = $(document).height();
-    alturaPagina = alturaDocumento / nPaginas;
+      alturaDocumento = $(document).height();
+      alturaPagina = alturaDocumento / nPaginas;
       $('html, body').animate({
         scrollTop: alturaPagina * (fator < 5 ? fator += 1 : fator = 0)
       }, 1000);
