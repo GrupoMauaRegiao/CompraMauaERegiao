@@ -1,7 +1,7 @@
 @import "normalize.scss";
 $fonte: 'Lato',Tahoma,sans-serif;
 
-@mixin WidthHeight($width, $height) {
+@mixin WidthHeight($width,$height) {
   width:$width;
   height:$height;
 }
@@ -15,15 +15,43 @@ html{
 }
 
 #pagina{
+  -webkit-transition:all 0.5s linear;
+  -moz-transition:all 0.5s linear;
+  -o-transition:all 0.5s linear;
+  transition:all 0.5s linear;
   display:none;
   position:relative;
   top:0;
   overflow:auto;
   background:rgb(28,83,137) url('../imagens/background-body.jpg') no-repeat fixed;
-  @include WidthHeight(100%, 100%);
+  @include WidthHeight(100%,100%);
+
+  .marca-pagina{
+    -webkit-text-shadow:1px 1px 0 rgba(0,0,0,0.3);
+    -moz-text-shadow:1px 1px 0 rgba(0,0,0,0.3);
+    -o-text-shadow:1px 1px 0 rgba(0,0,0,0.3);
+    text-shadow:1px 1px 0 rgba(0,0,0,0.3);
+    -webkit-box-shadow:-1px 2px 0 rgba(0,0,0,0.2);
+    -moz-box-shadow:-1px 2px 0 rgba(0,0,0,0.2);
+    -o-box-shadow:-1px 2px 0 rgba(0,0,0,0.2);
+    box-shadow:-1px 2px 0 rgba(0,0,0,0.2);
+    font:bold 14px 'Lato',Tahoma,sans-serif;
+    text-align:center;
+    position:fixed;
+    background:rgb(99,129,176);
+    -webkit-border-radius:100px 100px 0;
+    -moz-border-radius:100px 100px 0;
+    -o-border-radius:100px 100px 0;
+    border-radius:100px 100px 0;
+    width:18px;
+    height:18px;
+    color:rgb(255,255,255);
+    top:5px;
+    left:5px;
+  }
 
   .slide{
-    @include WidthHeight(50%, auto);
+    @include WidthHeight(50%,auto);
     font-family:$fonte;
     color:rgb(255,255,255);
     margin:0 auto;
@@ -128,7 +156,7 @@ html{
         box-shadow:inset -2px 2px 12px rgb(100,100,100);
       }
 
-      input[type="button"]{
+      input[type="submit"]{
         border:0;
         font-weight:900;
         vertical-align:top;
@@ -136,7 +164,7 @@ html{
         background:rgb(99,129,176);
       }
 
-      input[type="button"]:hover{
+      input[type="submit"]:hover{
         color:rgb(255,255,255);
         background:rgb(49,79,126);
       }
@@ -331,12 +359,12 @@ html{
 }
 
   .botao-controle{
-    @include WidthHeight(85px, 40px);
+    @include WidthHeight(85px,40px);
     position:fixed;
     float:right;
 
     img{
-      @include WidthHeight(85px, 40px);
+      @include WidthHeight(85px,40px);
     }
   }
 
@@ -350,14 +378,14 @@ html{
     .logotipo{
       margin:40px  0 0 0;
 
-      img{ @include WidthHeight(788px, 290px); }
+      img{ @include WidthHeight(788px,290px); }
     }
 
     .logotipo-portal{
       margin:70px 0 0 0;
 
       img{
-        @include WidthHeight(265px, 272px);
+        @include WidthHeight(265px,272px);
       }
     }
 
@@ -372,7 +400,7 @@ html{
 
       .imagem{
         img{
-          @include WidthHeight(93px, 165px);
+          @include WidthHeight(93px,165px);
         }
       }
     } // #Smartphone
@@ -382,15 +410,15 @@ html{
         input[type="text"],
         input[type="email"]{
           font-size:35px;
-          @include WidthHeight(385px, 60px);
+          @include WidthHeight(385px,60px);
           margin:0 0 20px 0;
         }
 
-        input[type="button"]{
+        input[type="submit"]{
           font-size:30px;
           background:rgb(99,129,176);
           margin:0 0 0 20px;
-          @include WidthHeight(80px, 70px);
+          @include WidthHeight(80px,70px);
         }
       }
     } // #Formulário
@@ -407,14 +435,14 @@ html{
     .logotipo{
       margin:30px  0 0 0;
 
-      img{ @include WidthHeight(600px, auto); }
+      img{ @include WidthHeight(600px,auto); }
     }
 
     .logotipo-portal{
       margin:50px 0 0 0;
 
       img{
-        @include WidthHeight(230px, auto);
+        @include WidthHeight(230px,auto);
       }
     }
 
@@ -429,7 +457,7 @@ html{
 
       .imagem{
         img{
-          @include WidthHeight(40px, auto);
+          @include WidthHeight(40px,auto);
         }
       }
     } // #Smartphone
@@ -439,15 +467,15 @@ html{
         input[type="text"],
         input[type="email"]{
           font-size:35px;
-          @include WidthHeight(385px, 60px);
+          @include WidthHeight(385px,60px);
           margin:0 0 20px 0;
         }
 
-        input[type="button"]{
+        input[type="submit"]{
           font-size:30px;
           background:rgb(99,129,176);
           margin:0 0 0 20px;
-          @include WidthHeight(80px, 70px);
+          @include WidthHeight(80px,70px);
         }
       }
     } // #Formulário
@@ -464,14 +492,14 @@ html{
     .logotipo{
       margin:20px  0 0 0;
 
-      img{ @include WidthHeight(200px, auto); }
+      img{ @include WidthHeight(200px,auto); }
     }
 
     .logotipo-portal{
       margin:40px 0 0 0;
 
       img{
-        @include WidthHeight(170px, auto);
+        @include WidthHeight(170px,auto);
       }
     }
 
@@ -487,7 +515,7 @@ html{
 
       .imagem{
         img{
-          @include WidthHeight(30px, auto);
+          @include WidthHeight(30px,auto);
         }
       }
     } // #Smartphone
@@ -498,14 +526,14 @@ html{
         input[type="email"]{
           font-size:25px;
           margin:0 0 20px 0;
-          @include WidthHeight(210px, 40px);
+          @include WidthHeight(210px,40px);
         }
 
-        input[type="button"]{
+        input[type="submit"]{
           font-size:20px;
           background:rgb(99,129,176);
           margin:0 0 0 10px;
-          @include WidthHeight(55px, 50px);
+          @include WidthHeight(55px,50px);
         }
       }
     } // #Formulário
@@ -525,14 +553,14 @@ html{
     .logotipo{
       margin:10px 0 0 0;
 
-      img{ @include WidthHeight(200px, auto); }
+      img{ @include WidthHeight(200px,auto); }
     }
 
     .logotipo-portal{
       margin:20px 0 0 0;
 
       img{
-        @include WidthHeight(100px, auto);
+        @include WidthHeight(100px,auto);
       }
     }
 
@@ -547,7 +575,7 @@ html{
 
       .imagem{
         img{
-          @include WidthHeight(20px, auto);
+          @include WidthHeight(20px,auto);
         }
       }
     } // #Smartphone
@@ -558,24 +586,24 @@ html{
         input[type="email"]{
           font-size:18px;
           margin:0 0 5px 0;
-          @include WidthHeight(120px, 30px);
+          @include WidthHeight(120px,30px);
         }
 
-        input[type="button"]{
+        input[type="submit"]{
           font-size:18px;
           background:rgb(99,129,176);
           margin:0 0 0 5px !important;
-          @include WidthHeight(45px, 40px);
+          @include WidthHeight(45px,40px);
         }
       }
     } // #Formulário
   } // #Slide
 
   .botao-controle{
-    @include WidthHeight(42px, 20px);
+    @include WidthHeight(42px,20px);
 
     img{
-      @include WidthHeight(42px, 20px);
+      @include WidthHeight(42px,20px);
     }
   }
 }

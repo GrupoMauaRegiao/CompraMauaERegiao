@@ -11,6 +11,9 @@
   </head>
   <body>
     <div id="pagina">
+      <div class="marca-pagina">
+        1
+      </div>
       <div class="slide">
         <div class="header">
           <h1>Bem-vindo</h1>
@@ -83,10 +86,10 @@
             <p>Seja o primeiro a saber:</p>
           </div>
           <div class="formulario">
-            <form>
+            <form method="POST" action="#">
               <input type="text" placeholder="Nome" name="nome" required /> <br />
               <input type="email" placeholder="E-mail" name="email" required />
-              <input type="button" value="OK" name="botao-ok" />
+              <input type="submit" value="OK" name="botao-ok" />
             </form>
           </div>
         </div>
