@@ -98,14 +98,6 @@ $(document).ready(function () {
     });
   }
 
-  function esconderPagina() {
-    $('#pagina').hide(0);
-  }
-
-  function exibirPagina() {
-    $('#pagina').show(0);
-  }
-
   function ativarAnimacoes() {
     var documento;
     documento = $(document);
@@ -267,14 +259,12 @@ $(document).ready(function () {
         cache: false,
         data: informacao
       }).done(function () {
-        form.children().hide('slow');
+        form.children().hide('fast');
         $('<p>Obrigado <span>' + nome + '</span>. <br />Sua mensagem foi enviada para nós com sucesso!</p>').appendTo(form);
       });
     });
   }
 
-  esconderPagina();
-  exibirPagina();
   ajustarSlide();
   posicionarSetaControleScroll();
   controlarAnimacaoSetaScroll();

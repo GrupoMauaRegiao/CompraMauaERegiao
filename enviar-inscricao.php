@@ -5,8 +5,8 @@
     $quebraLinha = "\n";
   }
 
-  $destinatario = "marckfree@gmail.com";
-  $remetente = $destinatario;
+  $destinatario = "arte@revistamaua.com.br";
+  $remetente = "arte@revistamaua.com.br";
   $assunto = "COMPRA MAUÁ E REGIÃO - Inscrição";
   $nome = $_POST["nome"];
   $email = $_POST["email"];
