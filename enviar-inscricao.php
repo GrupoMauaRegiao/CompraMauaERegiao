@@ -5,8 +5,7 @@
     $quebraLinha = "\n";
   }
 
-  $destinatario = "arte@revistamaua.com.br";
-  $remetente = "arte@revistamaua.com.br";
+  $destinatario = "news@compramaua.com.br";
   $assunto = "COMPRA MAUÁ E REGIÃO - Inscrição";
   $nome = $_POST["nome"];
   $email = $_POST["email"];
@@ -17,7 +16,7 @@
      
   $headers .= "MIME-Version: 1.1" . $quebraLinha;
   $headers .= "Content-type: text/html; charset=utf-8" . $quebraLinha;
-  $headers .= "From: " . $remetente . $quebraLinha;
+  $headers .= "From: " . $email . $quebraLinha;
 
   if(!mail($destinatario, $assunto, $conteudo, $headers , "-r" . $destinatario)) {
     mail($destinatario, $assunto, $conteudo, $headers);
