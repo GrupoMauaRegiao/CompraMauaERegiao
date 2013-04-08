@@ -7,8 +7,8 @@
 
   $destinatario = "news@compramaua.com.br";
   $assunto = "COMPRA MAUÁ E REGIÃO - Inscrição";
-  $nome = $_POST["nome"];
-  $email = $_POST["email"];
+  $nome = ucwords(($_POST["nome"]);
+  $email = strtolower($_POST["email"]);
   $conteudo = 
     '<p><b>Nome:</b> ' . $nome . '</p>
      <p><b>E-mail:</b> ' . $email . '</p>
