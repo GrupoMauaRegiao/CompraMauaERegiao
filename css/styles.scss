@@ -113,6 +113,8 @@ html{ background:rgb(0,0,0); }
 
   .formulario{
     form{
+      span{ text-transform:capitalize; }
+
       input{
         -webkit-transition:all 0.2s linear;
         -moz-transition:all 0.2s linear;
