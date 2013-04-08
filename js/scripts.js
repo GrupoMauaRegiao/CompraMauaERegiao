@@ -165,7 +165,7 @@ $(document).ready(function () {
         (new TimelineLite()).append([
           TweenMax.fromTo(texto.eq(5), 1,
             { css: { marginLeft: '-50%' }, immediateRender: true },
-            { css: { marginLeft: '0' } })
+            { css: { marginLeft: '50%' } })
         ]), 1000);
 
       if (posicaoScroll < alturaPagina) {
@@ -203,15 +203,20 @@ $(document).ready(function () {
       informacao = 'nome=' + nome +
                    '&email=' + email;
 
-      $.ajax({
-        type: "POST",
-        url: window.location + '/enviar-inscricao.php',
-        cache: false,
-        data: informacao
-      }).done(function () {
-        form.children().hide('fast');
-        $('<p>Obrigado <span>' + nome + '</span>. <br />Sua mensagem foi enviada para nós com sucesso!</p>').appendTo(form);
-      });
+      if ((nome === '') || (email === '')) {
+        window.alert('Todos os campos são obrigatórios.');
+        $('input[type="text"]').focus();
+      } else {
+        $.ajax({
+          type: "POST",
+          url: window.location + '/enviar-inscricao.php',
+          cache: false,
+          data: informacao
+        }).done(function () {
+          form.children().hide('fast');
+          $('<p>Obrigado <span>' + nome + '</span>. <br />Sua inscrição foi enviada para nós com sucesso!</p>').appendTo(form);
+        });
+      }
     });
   }
 

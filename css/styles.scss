@@ -19,6 +19,7 @@ html{ background:rgb(0,0,0); }
   top:0;
   overflow:hidden;
   background:rgb(28,83,137) url('../imagens/background-body.jpg') repeat-x fixed;
+  background-size:cover;
   @include WidthHeight(100%,100%);
 
   .marca-pagina{
