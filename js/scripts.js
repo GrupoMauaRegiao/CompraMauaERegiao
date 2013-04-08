@@ -1,22 +1,26 @@
 "use strict";
 $(document).ready(function () {
-  function getWidth() {
+  function larguraJanela() {
     return $(window).width();
   }
 
-  function getHeight() {
+  function alturaJanela() {
     return $(window).height();
   }
 
+  function alturaSubtraindoPorcentagem(porcentagem) {
+    return alturaJanela() - ((alturaJanela() / 100) * porcentagem);
+  }
+
   function ajustarSlide() {
-    var slides, janela;
-    slides = $('.slide');
+    var slide, janela;
+    slide = $('.slide');
     janela = $(window);
 
-    slides.css('height', getHeight());
+    slide.css('height', alturaSubtraindoPorcentagem(30));
 
     janela.on('resize', function () {
-      slides.css('height', getWidth());
+      slide.css('height', alturaSubtraindoPorcentagem(30));
     });
   }
 
@@ -26,14 +30,14 @@ $(document).ready(function () {
     janela = $(window);
 
     controleScroll.css({
-      'top': getHeight() - 100,
-      'left': getWidth() - 150
+      'top': alturaJanela() - 100,
+      'left': larguraJanela() - 150
     });
 
     janela.on('resize', function () {
       controleScroll.css({
-        'top': getHeight() - 100,
-        'left': getWidth() - 150
+        'top': alturaJanela() - 100,
+        'left': larguraJanela() - 150
       });
     });
   }
@@ -75,7 +79,7 @@ $(document).ready(function () {
       }, 500);
 
       if (fator === 5) {
-        botao.fadeOut(2000);
+        botao.fadeOut(500);
       }
     }
 
@@ -93,166 +97,112 @@ $(document).ready(function () {
       }
 
       if (fator === 5) {
-        $(this).off();
+        $(this).off('keyup');
       }
     });
   }
 
   function ativarAnimacoes() {
-    var documento;
+    var controller, documento;
     documento = $(document);
+    controller = $.superscrollorama({
+      triggerAtCenter: true,
+      playoutAnimations: true
+    });
 
     documento.on('scroll', function () {
-      var altura, nPaginas, alturaPagina, marcadorPagina, headers, textos, imagens;
-      altura = $(document).height();
+      var nPaginas, posicaoScroll, alturaPagina, marcadorPagina, slide, headers, texto, imagem;
       nPaginas = 6;
-      alturaPagina = altura / nPaginas;
+      posicaoScroll = Math.floor(documento.scrollTop());
+      alturaPagina = Math.floor($(this).height() / nPaginas);
       marcadorPagina = $('.marca-pagina');
+      slide = $('.slide');
       headers = $('.header');
-      textos = $('.texto');
-      imagens = $('img');
+      texto = $('.texto');
+      imagem = $('img');
 
       // Slide 02
-      textos.eq(1).css({
-        '-webkit-transform': 'translateX(-150%) translateY(150%)',
-        '-webkit-filter': 'opacity(0)',
-        '-webkit-transition': '0.1s',
-      });
-      imagens.eq(0).css({
-        '-webkit-transform': 'translateX(150%) translateY(150%)',
-        '-webkit-filter': 'opacity(0)',
-        '-webkit-transition': '0.1s',
-      });
+      controller.addTween(slide.eq(1),
+        (new TimelineLite()).append([
+          TweenMax.fromTo(texto.eq(1), 1,
+            { css: { marginLeft: '-50%' }, immediateRender: true },
+            { css: { marginLeft: '0' } })
+        ]), 500);
+
+      controller.addTween(slide.eq(1),
+        (new TimelineLite()).append([
+          TweenMax.fromTo(imagem.eq(0), 1,
+            { css: { marginLeft: '50%' }, immediateRender: true },
+            { css: { marginLeft: '0' } })
+        ]), 500);
 
       // Slide 03
-      textos.eq(2).css({
-        '-webkit-filter': 'opacity(0)',
-        '-webkit-transition': '0.1s'
-      });
+      controller.addTween(slide.eq(2),
+        (new TimelineLite()).append([
+          TweenMax.fromTo(texto.eq(2), 1,
+            { css: { marginLeft: '50%'}, immediateRender: true },
+            { css: { marginLeft: '-50%' } })
+        ]), 1000);
 
       // Slide 04
-      textos.eq(3).css({
-        '-webkit-transform': 'translateX(-150%) translateY(150%)',
-        '-webkit-filter': 'opacity(0)',
-        '-webkit-transition': '0.1s',
-      });
-      textos.eq(4).css({
-        '-webkit-transform': 'translateX(-150%) translateY(150%)',
-        '-webkit-filter': 'opacity(0)',
-        '-webkit-transition': '0.1s',
-      });
-      imagens.eq(1).css({
-        '-webkit-transform': 'translateX(150%)',
-        '-webkit-filter': 'opacity(0)',
-        '-webkit-transition': '0.1s',
-      });
+      controller.addTween(slide.eq(3),
+        (new TimelineLite()).append([
+          TweenMax.fromTo(texto.eq(3), 1,
+            { css: {marginLeft: '50%' }, immediateRender: true },
+            { css: {marginLeft: '-30%' } })
+        ]), 1000);
+
+      controller.addTween(slide.eq(3),
+        (new TimelineLite()).append([
+          TweenMax.fromTo(texto.eq(4), 1,
+            { css: { marginLeft: '-50%' }, immediateRender: true },
+            { css: { marginLeft: '30%' } })
+        ]), 1000);
 
       // Slide 05
-      textos.eq(5).css({
-        '-webkit-transform': 'translateX(-150%) translateY(90%)',
-        '-webkit-filter': 'opacity(0)',
-        '-webkit-transition': '0.1s',
-      });
-      imagens.eq(2).css({
-        '-webkit-transform': 'scale(0)',
-        '-webkit-filter': 'opacity(0)',
-        '-webkit-transition': '0.1s',
-      });
+      texto.eq(4).css('width', 'auto');
+      controller.addTween(slide.eq(4),
+        (new TimelineLite()).append([
+          TweenMax.fromTo(texto.eq(5), 1,
+            { css: { marginLeft: '-50%' }, immediateRender: true },
+            { css: { marginLeft: '0' } })
+        ]), 1000);
 
-      if (Math.floor(documento.scrollTop()) < Math.floor(alturaPagina)) {
+      if (posicaoScroll < alturaPagina) {
         marcadorPagina.text(1);
-        imagens.eq(1).removeClass('animacaoSmartphone');
-      } else if (Math.floor(documento.scrollTop()) < Math.floor(alturaPagina * 2)) {
-        // Slide 02
+      } else if (posicaoScroll < alturaPagina * 2) {
         marcadorPagina.text(2);
-        imagens.eq(1).removeClass('animacaoSmartphone');
-        setTimeout(function () {
-          textos.eq(1).css({
-            '-webkit-transform': 'translateX(0%)',
-            '-webkit-transition': '0.5s',
-            '-webkit-filter': 'opacity(100%)'
-          });
-
-          imagens.eq(0).css({
-            '-webkit-transform': 'translateX(0%)',
-            '-webkit-transition': '5s',
-            '-webkit-filter': 'opacity(100%)'
-          });
-        }, 1);
-      } else if (Math.floor(documento.scrollTop()) < Math.floor(alturaPagina * 3)) {
-        // Slide 03
+      } else if (posicaoScroll < alturaPagina * 3) {
         marcadorPagina.text(3);
-        imagens.eq(1).removeClass('animacaoSmartphone');
-        setTimeout(function () {
-          textos.eq(2).css({
-            '-webkit-filter': 'opacity(100%)',
-            '-webkit-transition': '5s'
-          });
-        }, 1);
-      } else if (Math.floor(documento.scrollTop()) < Math.floor(alturaPagina * 4)) {
-        // Slide 04
+      } else if (posicaoScroll < alturaPagina * 4) {
         marcadorPagina.text(4);
-        imagens.eq(1).removeClass('animacaoSmartphone');
+        imagem.eq(1).removeClass('animacaoSmartphone');
         setTimeout(function () {
-          textos.eq(3).css({
-            '-webkit-transform': 'translate(0)',
-            '-webkit-filter': 'opacity(100%)',
-            '-webkit-transition': '1s',
-          });
-          textos.eq(4).css({
-            '-webkit-transform': 'translate(0)',
-            '-webkit-filter': 'opacity(100%)',
-            '-webkit-transition': '2s',
-          });
-          imagens.eq(1).css({
-            '-webkit-transform': 'translateX(0)',
-            '-webkit-filter': 'opacity(100%)',
-            '-webkit-transition': '3s',
-          });
-        }, 1);
-
-        setTimeout(function () {
-          imagens.eq(1).addClass('animacaoSmartphone');
-        }, 3000);
-      } else if (Math.floor(documento.scrollTop()) < Math.floor(alturaPagina * 5)) {
+          imagem.eq(1).addClass('animacaoSmartphone');
+        }, 1000);
+      } else if (posicaoScroll < alturaPagina * 5) {
         marcadorPagina.text(5);
-        imagens.eq(1).removeClass('animacaoSmartphone');
-        setTimeout(function () {
-          textos.eq(5).css({
-            '-webkit-transform': 'translate(0)',
-            '-webkit-filter': 'opacity(100%)',
-            '-webkit-transition': '2s',
-          });
-        }, 1);
-
-        setTimeout(function () {
-          imagens.eq(2).css({
-            '-webkit-transform': 'scale(1)',
-            '-webkit-filter': 'opacity(100%)',
-            '-webkit-transition': '4s',
-          });
-        }, 2000);
-      } else if (Math.floor(documento.scrollTop()) < Math.floor(alturaPagina * 6)) {
+      } else if (posicaoScroll < alturaPagina * 6) {
         marcadorPagina.text(6);
-        imagens.eq(1).removeClass('animacaoSmartphone');
       }
+
     });
   }
 
   function enviarEmail() {
     var form;
     form = $('form');
-
-    form.on('submit', function (evt) {
-      evt.preventDefault();
-      evt.stopImmediatePropagation();
-      evt.stopPropagation();
+    form.on('submit', function (e) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      e.stopPropagation();
 
       var nome, email, informacao;
       nome = $('input[type="text"]').val();
       email = $('input[type="email"]').val();
       informacao = 'nome=' + nome +
                    '&email=' + email;
+
       $.ajax({
         type: "POST",
         url: window.location + '/enviar-inscricao.php',

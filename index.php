@@ -102,6 +102,9 @@
 
     </div> <!-- #pagina -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="js/scripts.min.js"></script> 
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.9.3/TweenMax.min.js"></script>
+    <script src="js/jquery.gsap.min.js"></script>
+    <script src="js/superscrollorama.js"></script>
+    <script src="js/scripts.js"></script> 
   </body>
 </html>

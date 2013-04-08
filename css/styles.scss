@@ -1,18 +1,14 @@
 @import "normalize.scss";
-$fonte: 'Lato',Tahoma,sans-serif;
+$fonte:'Lato',Tahoma,sans-serif;
 
 @mixin WidthHeight($width,$height) {
   width:$width;
   height:$height;
 }
 
-html{
-  background:rgb(0,0,0);
-}
+*::selection{ background:rgb(252,252,15); }
 
-*::selection{
-  background:rgb(252,252,15);
-}
+html{ background:rgb(0,0,0); }
 
 #pagina{
   -webkit-transition:all 0.5s linear;
@@ -21,8 +17,8 @@ html{
   transition:all 0.5s linear;
   position:relative;
   top:0;
-  overflow:auto;
-  background:rgb(28,83,137) url('../imagens/background-body.jpg') no-repeat fixed;
+  overflow:hidden;
+  background:rgb(28,83,137) url('../imagens/background-body.jpg') repeat-x fixed;
   @include WidthHeight(100%,100%);
 
   .marca-pagina{
@@ -70,11 +66,7 @@ html{
       }
     }
 
-    .header-maior{
-      h1{
-        font-weight:300;
-      }
-    }
+    .header-maior{ h1{ font-weight:300; }}
 
     .smartphone{
       .texto{
@@ -84,6 +76,12 @@ html{
     }
 
     .texto{
+      -webkit-transition:0.3s;
+      -moz-transition:0.3s;
+      -o-transition:0.3s;
+      transition:0.3s;
+      width:100%;
+      
       p{
         margin:0;
         padding:0;
@@ -101,9 +99,7 @@ html{
       }
     }
 
-    .logotipo-portal{
-      text-align:right;
-    }
+    .logotipo-portal{ text-align:right; }
   }
 
   .formulario{
@@ -168,174 +164,174 @@ html{
         background:rgb(49,79,126);
       }
     }
-  } // #Formulário
-}
+  }
+} // #Formulário
 
   @-webkit-keyframes animacao{
     0% {
-      -webkit-transform: translateY(0);
-      -moz-transform: translateY(0);
-      -o-transform: translateY(0);
-      transform: translateY(0);
+      -webkit-transform:translateY(0);
+      -moz-transform:translateY(0);
+      -o-transform:translateY(0);
+      transform:translateY(0);
     }
     50% {
-      -webkit-transform: translateY(-50px);
-      -moz-transform: translateY(-50px);
-      -o-transform: translateY(-50px);
-      transform: translateY(-50px);
+      -webkit-transform:translateY(-50px);
+      -moz-transform:translateY(-50px);
+      -o-transform:translateY(-50px);
+      transform:translateY(-50px);
     }
     100% {
-      -webkit-transform: translateY(0);
-      -moz-transform: translateY(0);
-      -o-transform: translateY(0);
-      transform: translateY(0);
+      -webkit-transform:translateY(0);
+      -moz-transform:translateY(0);
+      -o-transform:translateY(0);
+      transform:translateY(0);
     }
   }
 
   @-moz-keyframes animacao{
     0% {
-      -webkit-transform: translateY(0);
-      -moz-transform: translateY(0);
-      -o-transform: translateY(0);
-      transform: translateY(0);
+      -webkit-transform:translateY(0);
+      -moz-transform:translateY(0);
+      -o-transform:translateY(0);
+      transform:translateY(0);
     }
     50% {
-      -webkit-transform: translateY(-50px);
-      -moz-transform: translateY(-50px);
-      -o-transform: translateY(-50px);
-      transform: translateY(-50px);
+      -webkit-transform:translateY(-50px);
+      -moz-transform:translateY(-50px);
+      -o-transform:translateY(-50px);
+      transform:translateY(-50px);
     }
     100% {
-      -webkit-transform: translateY(0);
-      -moz-transform: translateY(0);
-      -o-transform: translateY(0);
-      transform: translateY(0);
+      -webkit-transform:translateY(0);
+      -moz-transform:translateY(0);
+      -o-transform:translateY(0);
+      transform:translateY(0);
     }
   }
 
   @-o-keyframes animacao{
     0% {
-      -webkit-transform: translateY(0);
-      -moz-transform: translateY(0);
-      -o-transform: translateY(0);
-      transform: translateY(0);
+      -webkit-transform:translateY(0);
+      -moz-transform:translateY(0);
+      -o-transform:translateY(0);
+      transform:translateY(0);
     }
     50% {
-      -webkit-transform: translateY(-50px);
-      -moz-transform: translateY(-50px);
-      -o-transform: translateY(-50px);
-      transform: translateY(-50px);
+      -webkit-transform:translateY(-50px);
+      -moz-transform:translateY(-50px);
+      -o-transform:translateY(-50px);
+      transform:translateY(-50px);
     }
     100% {
-      -webkit-transform: translateY(0);
-      -moz-transform: translateY(0);
-      -o-transform: translateY(0);
-      transform: translateY(0);
+      -webkit-transform:translateY(0);
+      -moz-transform:translateY(0);
+      -o-transform:translateY(0);
+      transform:translateY(0);
     }
   }
 
   @keyframes animacao{
     0% {
-      -webkit-transform: translateY(0);
-      -moz-transform: translateY(0);
-      -o-transform: translateY(0);
-      transform: translateY(0);
+      -webkit-transform:translateY(0);
+      -moz-transform:translateY(0);
+      -o-transform:translateY(0);
+      transform:translateY(0);
     }
     50% {
-      -webkit-transform: translateY(-50px);
-      -moz-transform: translateY(-50px);
-      -o-transform: translateY(-50px);
-      transform: translateY(-50px);
+      -webkit-transform:translateY(-50px);
+      -moz-transform:translateY(-50px);
+      -o-transform:translateY(-50px);
+      transform:translateY(-50px);
     }
     100% {
-      -webkit-transform: translateY(0);
-      -moz-transform: translateY(0);
-      -o-transform: translateY(0);
-      transform: translateY(0);
+      -webkit-transform:translateY(0);
+      -moz-transform:translateY(0);
+      -o-transform:translateY(0);
+      transform:translateY(0);
     }
   }
 
   @-webkit-keyframes animacaoSmartphone{
     0% {
-      -webkit-transform: rotate(-20deg);
-      -moz-transform: rotate(-20deg);
-      -o-transform: rotate(-20deg);
-      transform: rotate(-20deg);
+      -webkit-transform:rotate(-20deg);
+      -moz-transform:rotate(-20deg);
+      -o-transform:rotate(-20deg);
+      transform:rotate(-20deg);
     }
     50% {
-      -webkit-transform: rotate(0);
-      -moz-transform: rotate(0);
-      -o-transform: rotate(0);
-      transform: rotate(0);
+      -webkit-transform:rotate(0);
+      -moz-transform:rotate(0);
+      -o-transform:rotate(0);
+      transform:rotate(0);
     }
     100% {
-      -webkit-transform: rotate(-20deg);
-      -moz-transform: rotate(-20deg);
-      -o-transform: rotate(-20deg);
-      transform: rotate(-20deg);
+      -webkit-transform:rotate(-20deg);
+      -moz-transform:rotate(-20deg);
+      -o-transform:rotate(-20deg);
+      transform:rotate(-20deg);
     }
   }
 
   @-moz-keyframes animacaoSmartphone{
     0% {
-      -webkit-transform: rotate(-20deg);
-      -moz-transform: rotate(-20deg);
-      -o-transform: rotate(-20deg);
-      transform: rotate(-20deg);
+      -webkit-transform:rotate(-20deg);
+      -moz-transform:rotate(-20deg);
+      -o-transform:rotate(-20deg);
+      transform:rotate(-20deg);
     }
     50% {
-      -webkit-transform: rotate(0);
-      -moz-transform: rotate(0);
-      -o-transform: rotate(0);
-      transform: rotate(0);
+      -webkit-transform:rotate(0);
+      -moz-transform:rotate(0);
+      -o-transform:rotate(0);
+      transform:rotate(0);
     }
     100% {
-      -webkit-transform: rotate(-20deg);
-      -moz-transform: rotate(-20deg);
-      -o-transform: rotate(-20deg);
-      transform: rotate(-20deg);
+      -webkit-transform:rotate(-20deg);
+      -moz-transform:rotate(-20deg);
+      -o-transform:rotate(-20deg);
+      transform:rotate(-20deg);
     }
   }
 
   @-o-keyframes animacaoSmartphone{
     0% {
-      -webkit-transform: rotate(-20deg);
-      -moz-transform: rotate(-20deg);
-      -o-transform: rotate(-20deg);
-      transform: rotate(-20deg);
+      -webkit-transform:rotate(-20deg);
+      -moz-transform:rotate(-20deg);
+      -o-transform:rotate(-20deg);
+      transform:rotate(-20deg);
     }
     50% {
-      -webkit-transform: rotate(0);
-      -moz-transform: rotate(0);
-      -o-transform: rotate(0);
-      transform: rotate(0);
+      -webkit-transform:rotate(0);
+      -moz-transform:rotate(0);
+      -o-transform:rotate(0);
+      transform:rotate(0);
     }
     100% {
-      -webkit-transform: rotate(-20deg);
-      -moz-transform: rotate(-20deg);
-      -o-transform: rotate(-20deg);
-      transform: rotate(-20deg);
+      -webkit-transform:rotate(-20deg);
+      -moz-transform:rotate(-20deg);
+      -o-transform:rotate(-20deg);
+      transform:rotate(-20deg);
     }
   }
 
   @keyframes animacaoSmartphone{
     0% {
-      -webkit-transform: rotate(-20deg);
-      -moz-transform: rotate(-20deg);
-      -o-transform: rotate(-20deg);
-      transform: rotate(-20deg);
+      -webkit-transform:rotate(-20deg);
+      -moz-transform:rotate(-20deg);
+      -o-transform:rotate(-20deg);
+      transform:rotate(-20deg);
     }
     50% {
-      -webkit-transform: rotate(0);
-      -moz-transform: rotate(0);
-      -o-transform: rotate(0);
-      transform: rotate(0);
+      -webkit-transform:rotate(0);
+      -moz-transform:rotate(0);
+      -o-transform:rotate(0);
+      transform:rotate(0);
     }
     100% {
-      -webkit-transform: rotate(-20deg);
-      -moz-transform: rotate(-20deg);
-      -o-transform: rotate(-20deg);
-      transform: rotate(-20deg);
+      -webkit-transform:rotate(-20deg);
+      -moz-transform:rotate(-20deg);
+      -o-transform:rotate(-20deg);
+      transform:rotate(-20deg);
     }
   }
 
@@ -353,25 +349,21 @@ html{
   -o-animation:animacaoSmartphone 0.2s infinite linear;
 }
 
-.menor{
-  margin: 0 0 20px 0;
-}
+.menor{ margin:0 0 20px 0; }
 
   .botao-controle{
-    @include WidthHeight(85px,40px);
     position:fixed;
     float:right;
+    @include WidthHeight(85px,40px);
 
-    img{
-      @include WidthHeight(85px,40px);
-    }
+    img{ @include WidthHeight(85px,40px); }
   }
 
 @media screen and (min-width:1500px) {
   .slide{
     .header{ h1{ font-size:5em; }}
     .header-maior{ h1{ font-size:120px; }}
-    .texto{ p{ font-size:4.5em; }}
+    .texto{ p{ font-size:3.5em; }}
     .menor{ font-size:9px !important; }
 
     .logotipo{
@@ -383,9 +375,7 @@ html{
     .logotipo-portal{
       margin:70px 0 0 0;
 
-      img{
-        @include WidthHeight(265px,272px);
-      }
+      img{ @include WidthHeight(265px,272px); }
     }
 
     .smartphone{
@@ -393,14 +383,12 @@ html{
 
       .texto{
         float:left;
-        padding: 0 20% 0 0;
+        padding:0 20% 0 0;
         color:rgb(252,252,15);
       }
 
       .imagem{
-        img{
-          @include WidthHeight(93px,165px);
-        }
+        img{ @include WidthHeight(93px,165px); }
       }
     } // #Smartphone
 
@@ -409,8 +397,8 @@ html{
         input[type="text"],
         input[type="email"]{
           font-size:35px;
-          @include WidthHeight(385px,60px);
           margin:0 0 20px 0;
+          @include WidthHeight(385px,60px);
         }
 
         input[type="submit"]{
@@ -428,7 +416,7 @@ html{
   .slide{
     .header{ h1{ font-size:4em; }}
     .header-maior{ h1{ font-size:100px; }}
-    .texto{ p{ font-size:3.5em; }}
+    .texto{ p{ font-size:2.5em; }}
     .menor{ font-size:12px !important; }
 
     .logotipo{
@@ -440,9 +428,7 @@ html{
     .logotipo-portal{
       margin:50px 0 0 0;
 
-      img{
-        @include WidthHeight(230px,auto);
-      }
+      img{ @include WidthHeight(230px,auto); }
     }
 
     .smartphone{
@@ -450,15 +436,11 @@ html{
 
       .texto{
         float:left;
-        padding: 0 9% 0 0;
+        padding:0 9% 0 0;
         color:rgb(252,252,15);
       }
 
-      .imagem{
-        img{
-          @include WidthHeight(40px,auto);
-        }
-      }
+      .imagem{ img{ @include WidthHeight(40px,auto); }}
     } // #Smartphone
 
     .formulario{
@@ -466,8 +448,8 @@ html{
         input[type="text"],
         input[type="email"]{
           font-size:35px;
-          @include WidthHeight(385px,60px);
           margin:0 0 20px 0;
+          @include WidthHeight(385px,60px);
         }
 
         input[type="submit"]{
@@ -485,7 +467,7 @@ html{
   .slide{
     .header{ h1{ font-size:3em; }}
     .header-maior{ h1{ font-size:70px; }}
-    .texto{ p{ font-size:2em; }}
+    .texto{ p{ font-size:1em; }}
     .menor{ font-size:13px !important; }
 
     .logotipo{
@@ -497,9 +479,7 @@ html{
     .logotipo-portal{
       margin:40px 0 0 0;
 
-      img{
-        @include WidthHeight(170px,auto);
-      }
+      img{ @include WidthHeight(170px,auto); }
     }
 
 
@@ -508,14 +488,12 @@ html{
 
       .texto{
         float:left;
-        padding: 0 0 0 0;
+        padding:0 0 0 0;
         color:rgb(252,252,15);
       }
 
       .imagem{
-        img{
-          @include WidthHeight(30px,auto);
-        }
+        img{ @include WidthHeight(30px,auto); }
       }
     } // #Smartphone
 
@@ -541,7 +519,7 @@ html{
 
 @media screen and (max-width:500px) {
   .slide{
-    .header{ h1{ font-size:2em; }}
+    .header{ h1{ font-size:1em; }}
     .header-maior{ h1{ font-size:40px; }}
     .texto{ p{ font-size:1em; }}
     .menor{
@@ -558,9 +536,7 @@ html{
     .logotipo-portal{
       margin:20px 0 0 0;
 
-      img{
-        @include WidthHeight(100px,auto);
-      }
+      img{ @include WidthHeight(100px,auto); }
     }
 
     .smartphone{
@@ -568,14 +544,12 @@ html{
 
       .texto{
         float:left;
-        padding: 0 10% 0 0;
+        padding:0 10% 0 0;
         color:rgb(252,252,15);
       }
 
       .imagem{
-        img{
-          @include WidthHeight(20px,auto);
-        }
+        img{ @include WidthHeight(20px,auto); }
       }
     } // #Smartphone
 
@@ -601,10 +575,6 @@ html{
   .botao-controle{
     @include WidthHeight(42px,20px);
 
-    img{
-      @include WidthHeight(42px,20px);
-    }
+    img{ @include WidthHeight(42px,20px); }
   }
 }
-
-
