@@ -214,7 +214,7 @@ $(document).ready(function () {
           data: informacao
         }).done(function () {
           form.children().hide('fast');
-          $('<p>Obrigado <span>' + nome + '</span>. <br />Sua inscrição foi enviada para nós com sucesso!</p>').appendTo(form);
+          $('<p>Obrigado, <span>' + nome + '</span>. <br />Sua inscrição foi enviada para nós com sucesso!</p>').appendTo(form);
         });
       }
     });
