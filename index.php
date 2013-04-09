@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="imagens/favicon.ico" />
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300" />
     <link rel="stylesheet" href="css/styles.min.css" />
-    <title>Compra Mauá e Região &#8212; Prepara-se! Nós vamos inovar de novo</title>
+    <title>Compra Mauá e Região &#8212; Prepara-se! Nós vamos inovar de novo.</title>
   </head>
   <body>
     <div id="pagina">
