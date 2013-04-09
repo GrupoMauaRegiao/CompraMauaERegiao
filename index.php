@@ -70,7 +70,7 @@
             <h1>Prepare-se.</h1>
           </div>
           <div class="texto">
-            <p>Nós vamos inovar de novo!</p>
+            <p>Inovar é o que nos move!</p>
           </div>
           <div class="logotipo-portal">
             <img src="imagens/logotipo-grupo-maua-e-regiao.png" alt="" />
