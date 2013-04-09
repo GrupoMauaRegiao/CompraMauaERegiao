@@ -49,7 +49,7 @@
       <div class="slide">
         <div class="conteudo">
           <div class="texto">
-            <p>Um site fácil de mexer no PC e ótimo para navegar em smartphone e tablets.</p>
+            <p>Um site fácil de mexer no PC e ótimo para navegar em smartphones e tablets.</p>
           </div>
           <div class="destaque">
             <div class="smartphone">
@@ -99,8 +99,8 @@
       <div class="botao-controle animacao-controle-scroll">
         <img src="imagens/seta-scroll.png" alt="" />
       </div>
-
     </div> <!-- #pagina -->
+
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.9.3/TweenMax.min.js"></script>
     <script src="js/superscrollorama.js"></script>
